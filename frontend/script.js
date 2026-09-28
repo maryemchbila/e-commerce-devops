@@ -1,5 +1,3 @@
-const API_URL = "http://localhost:8081/api/products";
-
 const productsContainer = document.getElementById("products");
 const statusMessage = document.getElementById("status");
 
@@ -23,7 +21,7 @@ function createProductCard(product) {
 
 async function loadProducts() {
     try {
-        const response = await fetch(API_URL);
+        const response = await fetch("/api/products");
 
         if (!response.ok) {
             throw new Error(`Request failed with status ${response.status}`);
